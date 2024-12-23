@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharp_project_begin;
+namespace csharp_project_begin
 {
     public class MyList<T>
     {
@@ -21,6 +21,7 @@ namespace csharp_project_begin;
                 _array[index] = value;
             }
         }
+
         public int Count { get { return _array.Length; } }
 
         public void Add(T value)
@@ -35,5 +36,6 @@ namespace csharp_project_begin;
             newArray[_array.Length] = value;
 
             _array = newArray;
+        }
     }
 }

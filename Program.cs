@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using System;
 
-class Program
+namespace csharp_project_begin
 {
-    static void Main(string[] args)
+    class Program
     {
-        List<int> list = new List<int>();
-        list.Add(2);
+        static void Main(string[] args)
+        {
+            List<int> list = new List<int>();
+            list.Add(2);
+        }
     }
 }
