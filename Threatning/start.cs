@@ -8,23 +8,22 @@ public class Start
 {
     public static async Task Main(string[] args)
     {
-        Console.WriteLine("Starting async tasks...");
+        Thread thread = new Thread(PrintNumbers);
+        thread.Start();
 
-        // Запуск асинхронных методов
-        Task task1 = PrintNumbersAsync("Task 1");
-        Task task2 = PrintNumbersAsync("Task 2");
-
-        await Task.WhenAll(task1, task2);
-
-        Console.WriteLine("All tasks have finished.");
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine($"Main thread: {i}");
+            Thread.Sleep(500);
+        }
     }
 
-    private static async Task PrintNumbersAsync(string taskName)
+    static void PrintNumbers()
     {
-        for (int i = 1; i <= 5; i++)
+        for (int i = 0; i < 5; i++)
         {
-            Console.WriteLine($"{taskName}: {i}");
-            await Task.Delay(500); // Асинхронная задержка
+            Console.WriteLine($"Thread: {i}");
+            Thread.Sleep(1000);
         }
     }
 }
